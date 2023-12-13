@@ -4,7 +4,7 @@ const { getLogs, addLogs } = require('./helper/datatabaseManagement');
 const generaterefcode = require('./helper/genaraterfcode');
 const getrefcode = require('./routes/getrefcode');
 const app = express()
-const port = 3000
+const port = process.env.port || 3000
 
 app.use(express.json())
 
