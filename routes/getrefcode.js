@@ -5,7 +5,7 @@ const generaterefcode = require('../helper/genaraterfcode');
 async function getrefcode(req, res, database) {
     const { paytm } = req.body
     const { data } = await getLogs({ number: paytm }, 'refer_data', database)
-
+    console.log(data)
     if (data.length <= 0) {
         const ref = generaterefcode(10)
 

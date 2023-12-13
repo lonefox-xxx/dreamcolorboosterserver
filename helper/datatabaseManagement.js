@@ -8,8 +8,8 @@ function updateLog(body, db , database) {
     });
 }
 
-const getLogs = (body, db , database) => {
-    const id = body.id ?? {}
+const getLogs = (id = {}, db, database) => {
+// const id = body.id ?? {}
     const collection = database.collection(db)
 
     return new Promise((resolve, reject) => {
