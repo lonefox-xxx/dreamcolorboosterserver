@@ -2,7 +2,7 @@ const { getLogs, addLogs } = require('../helper/datatabaseManagement');
 const generaterefcode = require('../helper/genaraterfcode');
 
 
-async function getrefcode(req, res,database) {
+async function getrefcode(req, res, database) {
     const { paytm } = req.body
     const { data } = await getLogs({ number: paytm }, 'refer_data', database)
 
@@ -21,9 +21,9 @@ async function getrefcode(req, res,database) {
         res.send({ success: true, refcode: ref })
 
     } else {
-        res.send({ success: true, data: data[0].refcode })
+        res.send({ success: true, refcode: data[0].refcode })
     }
 
 }
 
-module.exports =  getrefcode 
+module.exports = getrefcode 

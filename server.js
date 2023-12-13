@@ -1,13 +1,12 @@
 const express = require('express')
 const { MongoClient } = require('mongodb');
-const { getLogs, addLogs } = require('./helper/datatabaseManagement');
-const generaterefcode = require('./helper/genaraterfcode');
 const getrefcode = require('./routes/getrefcode');
+const cors = require('cors');
 const app = express()
-const port = process.env.port || 3000
+const port = 3000
 
 app.use(express.json())
-
+app.use(cors({ origin: '*' }));
 // setting up database
 const uri = 'mongodb+srv://dreamcolor:cch9szwd26@cluster0.ywsn7md.mongodb.net/';
 const client = new MongoClient(uri);
